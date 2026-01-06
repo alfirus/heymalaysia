@@ -5,16 +5,16 @@ This checklist is derived from `app_design_document.md` and serves as a roadmap 
 ## 1. Backend & Infrastructure (Node.js / Express / MongoDB)
 
 - [ ] **Setup & Config**
-    - [ ] Initialize Express app with TypeScript.
-    - [ ] Configure MongoDB connection (Mongoose).
-    - [ ] Setup Environment variables (.env).
+    - [x] Initialize Express app with TypeScript.
+    - [x] Configure MongoDB connection (Mongoose).
+    - [x] Setup Environment variables (.env).
     - [ ] Implement Error Handling middleware.
-    - [ ] Setup CORS and Helmet security.
+    - [x] Setup CORS and Helmet security.
 
 - [ ] **Authentication**
-    - [ ] Implement JWT Authentication middleware.
-    - [ ] Create Admin Login endpoint (`POST /auth/login`).
-    - [ ] Create User Registration/Login (if applicable for interactions).
+    - [x] Implement JWT Authentication middleware.
+    - [x] Create Admin Login endpoint (`POST /auth/login`).
+    - [x] Create User Registration/Login (if applicable for interactions).
 
 - [ ] **External Services**
     - [ ] **OpenWeatherMap Integration**: Service to fetch weather data.
@@ -23,30 +23,34 @@ This checklist is derived from `app_design_document.md` and serves as a roadmap 
         - [ ] Historical/Future date lookup (logic to find closest forecast).
 
 - [ ] **Database Models (Mongoose Schemas)**
-    - [ ] **User**: `username`, `email`, `password_hash`, `role` (user/admin).
-    - [ ] **Place**: `name`, `description`, `category` (Nature/Urban/Heritage), `state`, `images[]`, `location` (lat/long), `content`.
-    - [ ] **Event**: `title`, `description`, `date`, `location`, `approved` (bool), `paymentReference`.
-    - [ ] **Ad**: `title`, `imageUrl`, `targetUrl`, `status` (pending/active/rejected), `paymentReference`, `duration`.
-    - [ ] **Comment**: `userId`, `entityId` (Place/Event), `content`, `parentId` (for nested threads).
+    - [x] **User**: `username`, `email`, `password_hash`, `role` (user/admin).
+    - [x] **Place**: `name`, `description`, `category` (Nature/Urban/Heritage), `state`, `images[]`, `location` (lat/long), `content`.
+    - [x] **Event**: `title`, `description`, `date`, `location`, `approved` (bool), `paymentReference`.
+    - [x] **Ad**: `title`, `imageUrl`, `targetUrl`, `status` (pending/active/rejected), `paymentReference`, `duration`.
+    - [x] **Comment**: `userId`, `entityId` (Place/Event), `content`, `parentId` (for nested threads).
 
 - [ ] **API Endpoints**
-    - [ ] **Places**: CRUD (Get All, Get Detail, Create*, Update*, Delete*). (*Admin only)
-    - [ ] **History**: CRUD for historical articles.
-    - [ ] **Events**:
-        - [ ] Public: Get Active Events.
-        - [ ] User: Submit Event (create with `pending` status).
-        - [ ] Admin: Approve/Reject Event.
-    - [ ] **Ads**:
-        - [ ] Public: Get Active Ads (random/targeted).
-        - [ ] User: Submit Ad (create with `pending` status).
-        - [ ] Admin: Approve/Reject Ad.
+    - [x] **Places**: CRUD (Get All, Get Detail, Create*, Update*, Delete*). (*Admin only)
+    - [x] **History**: CRUD for historical articles.
+    - [x] **Events**:
+        - [x] Public: Get Active Events.
+        - [x] User: Submit Event (create with `pending` status).
+        - [x] Admin: Approve/Reject Event.
+    - [x] **Ads**:
+        - [x] Public: Get Active Ads (random/targeted).
+        - [x] User: Submit Ad (create with `pending` status).
+        - [x] Admin: Approve/Reject Ad.
+    - [ ] **Messaging (New)**:
+        - [ ] **Socket.io Setup**: Real-time communication server.
+        - [ ] **Message Model**: `senderId`, `receiverId`, `content`, `readStatus`.
+        - [ ] **API**: Get Chat History, Send Message.
 
 ## 2. Admin Dashboard (Next.js)
 
 - [ ] **Layout & Auth**
-    - [ ] Create Protected Route wrapper.
-    - [ ] **Login Page**: Admin authentication form.
-    - [ ] **Sidebar Navigation**: Dashboard, Places, Events, Ads, Users, History.
+    - [x] Create Protected Route wrapper.
+    - [x] **Login Page**: Admin authentication form.
+    - [x] **Sidebar Navigation**: Dashboard, Places, Events, Ads, Users, History.
 
 - [ ] **Core Modules**
     - [ ] **Dashboard Home**: Brief analytics (Users, Active Ads, Pending Approvals).
@@ -104,6 +108,7 @@ This checklist is derived from `app_design_document.md` and serves as a roadmap 
         - [ ] **Submit Event FAB (Floating Action Button)** -> Submission Form (incl. Payment Ref).
     - [ ] **Profile Tab**:
         - [ ] Favorites List.
+        - [ ] **My Messages**: Inbox List & Chat Interface.
         - [ ] **Submit Ad** Button -> Ad Submission Form (Upload Image, Link, Payment Ref).
 
 - [ ] **Technical Components**
