@@ -53,25 +53,25 @@ This checklist is derived from `app_design_document.md` and serves as a roadmap 
     - [x] **Sidebar Navigation**: Dashboard, Places, Events, Ads, Users, History.
 
 - [ ] **Core Modules**
-    - [ ] **Dashboard Home**: Brief analytics (Users, Active Ads, Pending Approvals).
-    - [ ] **Places Management**:
-        - [ ] List View (Filter by State/Category).
-        - [ ] Create/Edit Form (Rich Text Editor, Image Upload).
+    - [x] **Dashboard Home**: Brief analytics (Users, Active Ads, Pending Approvals).
+    - [x] **Places Management**:
+        - [x] List View (Filter by State/Category).
+        - [x] Create/Edit Form (Rich Text Editor, Image Upload).
     - [ ] **History Management**: Timeline editor.
-    - [ ] **Advertisement Manager**:
-        - [ ] List all ads (filter by Status).
-        - [ ] Approval Detail View: Show Banner, Link, Payment Ref.
-        - [ ] Action: Approve (Set Active) / Reject.
-    - [ ] **Event Approval Center**:
-        - [ ] List pending events.
-        - [ ] Validate Payment Ref.
-        - [ ] Action: Approve/Reject.
+    - [x] **Advertisement Manager**:
+        - [x] List all ads (filter by Status).
+        - [x] Approval Detail View: Show Banner, Link, Payment Ref.
+        - [x] Action: Approve (Set Active) / Reject.
+    - [x] **Event Approval Center**:
+        - [x] List pending events.
+        - [x] Validate Payment Ref.
+        - [x] Action: Approve/Reject.
 
 ## 3. Mobile App (React Native / Expo)
 
 - [ ] **Navigation Structure**
-    - [ ] **Bottom Tab Navigator**: Home, Explore, Learn, Events, Profile.
-    - [ ] **Stack Navigator**: Detail pages, Forms, Auth.
+    - [x] **Bottom Tab Navigator**: Home, Explore, Learn, Events, Profile.
+    - [x] **Stack Navigator**: Detail pages, Forms, Auth.
 
 - [ ] **Screens & Features**
     - [ ] **Home Tab**:
@@ -105,11 +105,11 @@ This checklist is derived from `app_design_document.md` and serves as a roadmap 
         - [ ] Calendar View.
         - [ ] Location-based Event List.
         - [ ] **Event Detail**: Show weather forecast for event date.
-        - [ ] **Submit Event FAB (Floating Action Button)** -> Submission Form (incl. Payment Ref).
+        - [x] **Submit Event FAB (Floating Action Button)** -> Submission Form (incl. Payment Ref).
     - [ ] **Profile Tab**:
         - [ ] Favorites List.
         - [ ] **My Messages**: Inbox List & Chat Interface.
-        - [ ] **Submit Ad** Button -> Ad Submission Form (Upload Image, Link, Payment Ref).
+        - [x] **Submit Ad** Button -> Ad Submission Form (Upload Image, Link, Payment Ref).
 
 - [ ] **Technical Components**
     - [ ] **Lazy Image Loader**: Optimized image component with caching.
