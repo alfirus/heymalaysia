@@ -8,20 +8,28 @@ export interface IUser {
 }
 
 export interface IPlace {
-  _id?: string;
-  name: string;
-  description: string;
-  category: 'Nature' | 'Urban' | 'Heritage';
-  state: string;
-  location: {
-    lat: number;
-    lng: number;
-    address?: string;
-  };
-  images: string[];
-  content: string; // Rich text / markdown
-  createdAt?: Date;
-  updatedAt?: Date;
+	_id?: string;
+	googlePlaceId?: string;
+	name: string;
+	description?: string; // Optional now
+	category: 'Nature' | 'Urban' | 'Heritage' | string; // Flexible for GMaps types
+	state?: string;
+	formattedAddress?: string;
+	location: {
+		type: 'Point';
+		coordinates: number[]; // [lng, lat]
+	};
+	types?: string[];
+	rating?: number;
+	userRatingsTotal?: number;
+	openingHours?: any; // JSON object or array
+	photos?: any[]; // Metadata from Google
+	images: string[]; // Our URLs (or Google Photo URLs)
+	content?: string; // Rich text / markdown
+	featured?: boolean;
+	status?: 'pending' | 'approved' | 'rejected';
+	createdAt?: Date;
+	updatedAt?: Date;
 }
 
 export interface IEvent {
@@ -65,4 +73,13 @@ export interface IComment {
   upvotes: number;
   createdAt?: Date;
   updatedAt?: Date;
+}
+
+export interface IMessage {
+	_id?: string;
+	senderId: string;
+	receiverId: string;
+	content: string;
+	read: boolean;
+	timestamp: Date;
 }

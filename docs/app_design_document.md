@@ -59,6 +59,11 @@
 *   **Real-time Forecast:** Displays current weather based on user ID location or manual search.
 *   **Travel Planning:** Helps users plan visits based on 3-day forecasts for Places and specific date forecasts for Events.
 
+### 4.8. Automated Content Harvesting (Google Maps Platform)
+*   **POI Harvester Script:** A backend script running via cron job to automatically discover new Points of Interest (POI) within Malaysia using the Google Maps Places API.
+*   **Duplicate Detection:** Checks if the place already exists in the database before adding.
+*   **Logic:** Adds 2 places per run (to manage API quota and quality).
+
 ## 5. Information Architecture (Navigation)
 
 1.  **Home Tab**: Featured daily highlights, "Did You Know?", Upcoming Events ticker.

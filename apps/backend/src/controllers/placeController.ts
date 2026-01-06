@@ -2,12 +2,29 @@ import { Request, Response } from 'express';
 import Place from '../models/Place';
 import { AuthRequest } from '../types/express';
 
-// @desc    Get all places
+// @desc    Get all places with optional filters
 // @route   GET /api/places
 // @access  Public
 export const getPlaces = async (req: Request, res: Response) => {
   try {
-    const places = await Place.find({});
+    const { category, state, featured } = req.query;
+
+				// Build query object
+				const query: any = { status: 'approved' }; // Only show approved places by default
+
+				if (category) {
+					query.category = category;
+				}
+
+				if (state) {
+					query.state = state;
+				}
+
+				if (featured === 'true') {
+					query.featured = true;
+				}
+
+				const places = await Place.find(query);
     res.json(places);
   } catch (error: any) {
     res.status(500).json({ message: error.message });

@@ -34,11 +34,12 @@ export const ExploreScreen = createPlaceholderScreen('Explore Places');
 export const LearnScreen = createPlaceholderScreen('Learn Culture');
 export const EventsScreen = createPlaceholderScreen('Events');
 export const ProfileScreen = ({ navigation }: any) => (
-  <View style={styles.container}>
-    <Text style={styles.title}>My Profile</Text>
-    <View style={{ marginTop: 20, width: '80%', gap: 10 }}>
-       <Button title="Submit New Event" onPress={() => navigation.navigate('EventSubmission')} />
-       <Button title="Advertise with Us" onPress={() => navigation.navigate('AdSubmission')} />
-    </View>
-  </View>
+	<View style={styles.container}>
+		<Text style={styles.title}>My Profile</Text>
+		<View style={{ marginTop: 20, width: '80%', gap: 10 }}>
+			<Button title="Submit New Event" onPress={() => navigation.navigate('EventSubmission')} />
+			<Button title="Advertise with Us" onPress={() => navigation.navigate('AdSubmission')} />
+			<Button title="My Messages" variant="outline" onPress={() => navigation.navigate('ChatList')} />
+		</View>
+	</View>
 );
